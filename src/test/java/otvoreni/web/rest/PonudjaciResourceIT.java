@@ -277,7 +277,10 @@ class PonudjaciResourceIT {
         Ponudjaci partialUpdatedPonudjaci = new Ponudjaci();
         partialUpdatedPonudjaci.setId(ponudjaci.getId());
 
-        partialUpdatedPonudjaci.adresaPonudjaca(UPDATED_ADRESA_PONUDJACA).bankaRacun(UPDATED_BANKA_RACUN);
+        partialUpdatedPonudjaci
+            .odgovornoLice(UPDATED_ODGOVORNO_LICE)
+            .adresaPonudjaca(UPDATED_ADRESA_PONUDJACA)
+            .bankaRacun(UPDATED_BANKA_RACUN);
 
         restPonudjaciMockMvc
             .perform(
@@ -292,7 +295,7 @@ class PonudjaciResourceIT {
         assertThat(ponudjaciList).hasSize(databaseSizeBeforeUpdate);
         Ponudjaci testPonudjaci = ponudjaciList.get(ponudjaciList.size() - 1);
         assertThat(testPonudjaci.getNazivPonudjaca()).isEqualTo(DEFAULT_NAZIV_PONUDJACA);
-        assertThat(testPonudjaci.getOdgovornoLice()).isEqualTo(DEFAULT_ODGOVORNO_LICE);
+        assertThat(testPonudjaci.getOdgovornoLice()).isEqualTo(UPDATED_ODGOVORNO_LICE);
         assertThat(testPonudjaci.getAdresaPonudjaca()).isEqualTo(UPDATED_ADRESA_PONUDJACA);
         assertThat(testPonudjaci.getBankaRacun()).isEqualTo(UPDATED_BANKA_RACUN);
     }

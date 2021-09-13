@@ -368,15 +368,13 @@ class AnexResourceIT {
         partialUpdatedAnex.setId(anex.getId());
 
         partialUpdatedAnex
-            .sifra_postupka(UPDATED_SIFRA_POSTUPKA)
-            .inn(UPDATED_INN)
+            .sifra_ponude(UPDATED_SIFRA_PONUDE)
             .zasticeni_naziv(UPDATED_ZASTICENI_NAZIV)
             .farmaceutski_oblik_lijeka(UPDATED_FARMACEUTSKI_OBLIK_LIJEKA)
-            .jacina_lijeka(UPDATED_JACINA_LIJEKA)
             .pakovanje(UPDATED_PAKOVANJE)
             .procijenjena_vrijednost(UPDATED_PROCIJENJENA_VRIJEDNOST)
             .rok_isporuke(UPDATED_ROK_ISPORUKE)
-            .naziv_ponudjaca(UPDATED_NAZIV_PONUDJACA);
+            .naziv_proizvodjaca(UPDATED_NAZIV_PROIZVODJACA);
 
         restAnexMockMvc
             .perform(
@@ -390,19 +388,19 @@ class AnexResourceIT {
         List<Anex> anexList = anexRepository.findAll();
         assertThat(anexList).hasSize(databaseSizeBeforeUpdate);
         Anex testAnex = anexList.get(anexList.size() - 1);
-        assertThat(testAnex.getSifra_postupka()).isEqualTo(UPDATED_SIFRA_POSTUPKA);
-        assertThat(testAnex.getSifra_ponude()).isEqualTo(DEFAULT_SIFRA_PONUDE);
+        assertThat(testAnex.getSifra_postupka()).isEqualTo(DEFAULT_SIFRA_POSTUPKA);
+        assertThat(testAnex.getSifra_ponude()).isEqualTo(UPDATED_SIFRA_PONUDE);
         assertThat(testAnex.getAtc()).isEqualTo(DEFAULT_ATC);
-        assertThat(testAnex.getInn()).isEqualTo(UPDATED_INN);
+        assertThat(testAnex.getInn()).isEqualTo(DEFAULT_INN);
         assertThat(testAnex.getZasticeni_naziv()).isEqualTo(UPDATED_ZASTICENI_NAZIV);
         assertThat(testAnex.getFarmaceutski_oblik_lijeka()).isEqualTo(UPDATED_FARMACEUTSKI_OBLIK_LIJEKA);
-        assertThat(testAnex.getJacina_lijeka()).isEqualTo(UPDATED_JACINA_LIJEKA);
+        assertThat(testAnex.getJacina_lijeka()).isEqualTo(DEFAULT_JACINA_LIJEKA);
         assertThat(testAnex.getPakovanje()).isEqualTo(UPDATED_PAKOVANJE);
         assertThat(testAnex.getTrazena_kolicina()).isEqualTo(DEFAULT_TRAZENA_KOLICINA);
         assertThat(testAnex.getProcijenjena_vrijednost()).isEqualTo(UPDATED_PROCIJENJENA_VRIJEDNOST);
         assertThat(testAnex.getRok_isporuke()).isEqualTo(UPDATED_ROK_ISPORUKE);
-        assertThat(testAnex.getNaziv_ponudjaca()).isEqualTo(UPDATED_NAZIV_PONUDJACA);
-        assertThat(testAnex.getNaziv_proizvodjaca()).isEqualTo(DEFAULT_NAZIV_PROIZVODJACA);
+        assertThat(testAnex.getNaziv_ponudjaca()).isEqualTo(DEFAULT_NAZIV_PONUDJACA);
+        assertThat(testAnex.getNaziv_proizvodjaca()).isEqualTo(UPDATED_NAZIV_PROIZVODJACA);
     }
 
     @Test

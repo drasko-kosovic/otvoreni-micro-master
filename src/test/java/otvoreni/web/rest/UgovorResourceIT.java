@@ -310,11 +310,11 @@ class UgovorResourceIT {
         partialUpdatedUgovor.setId(ugovor.getId());
 
         partialUpdatedUgovor
-            .datumUgovora(UPDATED_DATUM_UGOVORA)
+            .brojUgovora(UPDATED_BROJ_UGOVORA)
             .brojOdluke(UPDATED_BROJ_ODLUKE)
-            .datumOdluke(UPDATED_DATUM_ODLUKE)
             .iznosUgovoraBezPdf(UPDATED_IZNOS_UGOVORA_BEZ_PDF)
-            .sifraPostupka(UPDATED_SIFRA_POSTUPKA);
+            .sifraPostupka(UPDATED_SIFRA_POSTUPKA)
+            .sifraPonude(UPDATED_SIFRA_PONUDE);
 
         restUgovorMockMvc
             .perform(
@@ -328,13 +328,13 @@ class UgovorResourceIT {
         List<Ugovor> ugovorList = ugovorRepository.findAll();
         assertThat(ugovorList).hasSize(databaseSizeBeforeUpdate);
         Ugovor testUgovor = ugovorList.get(ugovorList.size() - 1);
-        assertThat(testUgovor.getBrojUgovora()).isEqualTo(DEFAULT_BROJ_UGOVORA);
-        assertThat(testUgovor.getDatumUgovora()).isEqualTo(UPDATED_DATUM_UGOVORA);
+        assertThat(testUgovor.getBrojUgovora()).isEqualTo(UPDATED_BROJ_UGOVORA);
+        assertThat(testUgovor.getDatumUgovora()).isEqualTo(DEFAULT_DATUM_UGOVORA);
         assertThat(testUgovor.getBrojOdluke()).isEqualTo(UPDATED_BROJ_ODLUKE);
-        assertThat(testUgovor.getDatumOdluke()).isEqualTo(UPDATED_DATUM_ODLUKE);
+        assertThat(testUgovor.getDatumOdluke()).isEqualTo(DEFAULT_DATUM_ODLUKE);
         assertThat(testUgovor.getIznosUgovoraBezPdf()).isEqualTo(UPDATED_IZNOS_UGOVORA_BEZ_PDF);
         assertThat(testUgovor.getSifraPostupka()).isEqualTo(UPDATED_SIFRA_POSTUPKA);
-        assertThat(testUgovor.getSifraPonude()).isEqualTo(DEFAULT_SIFRA_PONUDE);
+        assertThat(testUgovor.getSifraPonude()).isEqualTo(UPDATED_SIFRA_PONUDE);
     }
 
     @Test

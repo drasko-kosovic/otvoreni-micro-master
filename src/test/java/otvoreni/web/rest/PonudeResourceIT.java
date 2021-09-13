@@ -392,10 +392,10 @@ class PonudeResourceIT {
 
         partialUpdatedPonude
             .sifraPonude(UPDATED_SIFRA_PONUDE)
-            .sifraPostupka(UPDATED_SIFRA_POSTUPKA)
-            .brojPartije(UPDATED_BROJ_PARTIJE)
+            .nazivProizvodjaca(UPDATED_NAZIV_PROIZVODJACA)
             .zasticeniNaziv(UPDATED_ZASTICENI_NAZIV)
-            .rokIsporuke(UPDATED_ROK_ISPORUKE);
+            .rokIsporuke(UPDATED_ROK_ISPORUKE)
+            .datumPonude(UPDATED_DATUM_PONUDE);
 
         restPonudeMockMvc
             .perform(
@@ -410,13 +410,13 @@ class PonudeResourceIT {
         assertThat(ponudeList).hasSize(databaseSizeBeforeUpdate);
         Ponude testPonude = ponudeList.get(ponudeList.size() - 1);
         assertThat(testPonude.getSifraPonude()).isEqualTo(UPDATED_SIFRA_PONUDE);
-        assertThat(testPonude.getSifraPostupka()).isEqualTo(UPDATED_SIFRA_POSTUPKA);
-        assertThat(testPonude.getBrojPartije()).isEqualTo(UPDATED_BROJ_PARTIJE);
-        assertThat(testPonude.getNazivProizvodjaca()).isEqualTo(DEFAULT_NAZIV_PROIZVODJACA);
+        assertThat(testPonude.getSifraPostupka()).isEqualTo(DEFAULT_SIFRA_POSTUPKA);
+        assertThat(testPonude.getBrojPartije()).isEqualTo(DEFAULT_BROJ_PARTIJE);
+        assertThat(testPonude.getNazivProizvodjaca()).isEqualTo(UPDATED_NAZIV_PROIZVODJACA);
         assertThat(testPonude.getZasticeniNaziv()).isEqualTo(UPDATED_ZASTICENI_NAZIV);
         assertThat(testPonude.getPonudjenaVrijednost()).isEqualTo(DEFAULT_PONUDJENA_VRIJEDNOST);
         assertThat(testPonude.getRokIsporuke()).isEqualTo(UPDATED_ROK_ISPORUKE);
-        assertThat(testPonude.getDatumPonude()).isEqualTo(DEFAULT_DATUM_PONUDE);
+        assertThat(testPonude.getDatumPonude()).isEqualTo(UPDATED_DATUM_PONUDE);
         assertThat(testPonude.getSifraPonudjaca()).isEqualTo(DEFAULT_SIFRA_PONUDJACA);
         assertThat(testPonude.getSelected()).isEqualTo(DEFAULT_SELECTED);
     }

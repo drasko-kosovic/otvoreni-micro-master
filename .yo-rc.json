@@ -4,7 +4,7 @@
     "otherModules": [],
     "applicationType": "microservice",
     "baseName": "otvoreni",
-    "jhipsterVersion": "7.0.0",
+    "jhipsterVersion": "7.1.0",
     "skipClient": true,
     "skipUserManagement": true,
     "skipServer": false,
@@ -59,6 +59,6 @@
     "clientPackageManager": "npm",
     "clientTheme": "none",
     "clientThemeVariant": "",
-    "withAdminUi": true
+    "withAdminUi": false
   }
 }

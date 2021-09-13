@@ -319,8 +319,6 @@ class NarucilacResourceIT {
 
         partialUpdatedNarucilac
             .racun(UPDATED_RACUN)
-            .pib(UPDATED_PIB)
-            .pdv(UPDATED_PDV)
             .odgovornoLiceNarucioca(UPDATED_ODGOVORNO_LICE_NARUCIOCA)
             .email(UPDATED_EMAIL)
             .adresa(UPDATED_ADRESA);
@@ -340,8 +338,8 @@ class NarucilacResourceIT {
         assertThat(testNarucilac.getNaziv()).isEqualTo(DEFAULT_NAZIV);
         assertThat(testNarucilac.getRacun()).isEqualTo(UPDATED_RACUN);
         assertThat(testNarucilac.getTelefon()).isEqualTo(DEFAULT_TELEFON);
-        assertThat(testNarucilac.getPib()).isEqualTo(UPDATED_PIB);
-        assertThat(testNarucilac.getPdv()).isEqualTo(UPDATED_PDV);
+        assertThat(testNarucilac.getPib()).isEqualTo(DEFAULT_PIB);
+        assertThat(testNarucilac.getPdv()).isEqualTo(DEFAULT_PDV);
         assertThat(testNarucilac.getOdgovornoLiceNarucioca()).isEqualTo(UPDATED_ODGOVORNO_LICE_NARUCIOCA);
         assertThat(testNarucilac.getEmail()).isEqualTo(UPDATED_EMAIL);
         assertThat(testNarucilac.getAdresa()).isEqualTo(UPDATED_ADRESA);

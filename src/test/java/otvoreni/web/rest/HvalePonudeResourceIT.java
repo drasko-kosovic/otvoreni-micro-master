@@ -308,9 +308,8 @@ class HvalePonudeResourceIT {
         partialUpdatedHvalePonude.setId(hvalePonude.getId());
 
         partialUpdatedHvalePonude
-            .brojPartije(UPDATED_BROJ_PARTIJE)
-            .inn(UPDATED_INN)
             .pakovanje(UPDATED_PAKOVANJE)
+            .trazenaKolicina(UPDATED_TRAZENA_KOLICINA)
             .procijenjenaVrijednost(UPDATED_PROCIJENJENA_VRIJEDNOST);
 
         restHvalePonudeMockMvc
@@ -326,11 +325,11 @@ class HvalePonudeResourceIT {
         assertThat(hvalePonudeList).hasSize(databaseSizeBeforeUpdate);
         HvalePonude testHvalePonude = hvalePonudeList.get(hvalePonudeList.size() - 1);
         assertThat(testHvalePonude.getSifraPostupka()).isEqualTo(DEFAULT_SIFRA_POSTUPKA);
-        assertThat(testHvalePonude.getBrojPartije()).isEqualTo(UPDATED_BROJ_PARTIJE);
-        assertThat(testHvalePonude.getInn()).isEqualTo(UPDATED_INN);
+        assertThat(testHvalePonude.getBrojPartije()).isEqualTo(DEFAULT_BROJ_PARTIJE);
+        assertThat(testHvalePonude.getInn()).isEqualTo(DEFAULT_INN);
         assertThat(testHvalePonude.getFarmaceutskiOblikLijeka()).isEqualTo(DEFAULT_FARMACEUTSKI_OBLIK_LIJEKA);
         assertThat(testHvalePonude.getPakovanje()).isEqualTo(UPDATED_PAKOVANJE);
-        assertThat(testHvalePonude.getTrazenaKolicina()).isEqualTo(DEFAULT_TRAZENA_KOLICINA);
+        assertThat(testHvalePonude.getTrazenaKolicina()).isEqualTo(UPDATED_TRAZENA_KOLICINA);
         assertThat(testHvalePonude.getProcijenjenaVrijednost()).isEqualTo(UPDATED_PROCIJENJENA_VRIJEDNOST);
     }
 

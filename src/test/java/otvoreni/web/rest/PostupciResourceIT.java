@@ -316,7 +316,11 @@ class PostupciResourceIT {
         Postupci partialUpdatedPostupci = new Postupci();
         partialUpdatedPostupci.setId(postupci.getId());
 
-        partialUpdatedPostupci.brojTendera(UPDATED_BROJ_TENDERA).opisPostupka(UPDATED_OPIS_POSTUPKA);
+        partialUpdatedPostupci
+            .sifraPostupka(UPDATED_SIFRA_POSTUPKA)
+            .brojTendera(UPDATED_BROJ_TENDERA)
+            .opisPostupka(UPDATED_OPIS_POSTUPKA)
+            .vrstaPostupka(UPDATED_VRSTA_POSTUPKA);
 
         restPostupciMockMvc
             .perform(
@@ -330,10 +334,10 @@ class PostupciResourceIT {
         List<Postupci> postupciList = postupciRepository.findAll();
         assertThat(postupciList).hasSize(databaseSizeBeforeUpdate);
         Postupci testPostupci = postupciList.get(postupciList.size() - 1);
-        assertThat(testPostupci.getSifraPostupka()).isEqualTo(DEFAULT_SIFRA_POSTUPKA);
+        assertThat(testPostupci.getSifraPostupka()).isEqualTo(UPDATED_SIFRA_POSTUPKA);
         assertThat(testPostupci.getBrojTendera()).isEqualTo(UPDATED_BROJ_TENDERA);
         assertThat(testPostupci.getOpisPostupka()).isEqualTo(UPDATED_OPIS_POSTUPKA);
-        assertThat(testPostupci.getVrstaPostupka()).isEqualTo(DEFAULT_VRSTA_POSTUPKA);
+        assertThat(testPostupci.getVrstaPostupka()).isEqualTo(UPDATED_VRSTA_POSTUPKA);
         assertThat(testPostupci.getDatumObjave()).isEqualTo(DEFAULT_DATUM_OBJAVE);
         assertThat(testPostupci.getDatumOtvaranja()).isEqualTo(DEFAULT_DATUM_OTVARANJA);
     }

@@ -372,10 +372,11 @@ class SpecifikacijeResourceIT {
         partialUpdatedSpecifikacije.setId(specifikacije.getId());
 
         partialUpdatedSpecifikacije
+            .brojPartije(UPDATED_BROJ_PARTIJE)
+            .inn(UPDATED_INN)
             .jacinaLijeka(UPDATED_JACINA_LIJEKA)
             .jedinicaMjere(UPDATED_JEDINICA_MJERE)
             .procijenjenaVrijednost(UPDATED_PROCIJENJENA_VRIJEDNOST)
-            .pakovanje(UPDATED_PAKOVANJE)
             .trazenaKolicina(UPDATED_TRAZENA_KOLICINA);
 
         restSpecifikacijeMockMvc
@@ -391,14 +392,14 @@ class SpecifikacijeResourceIT {
         assertThat(specifikacijeList).hasSize(databaseSizeBeforeUpdate);
         Specifikacije testSpecifikacije = specifikacijeList.get(specifikacijeList.size() - 1);
         assertThat(testSpecifikacije.getSifraPostupka()).isEqualTo(DEFAULT_SIFRA_POSTUPKA);
-        assertThat(testSpecifikacije.getBrojPartije()).isEqualTo(DEFAULT_BROJ_PARTIJE);
+        assertThat(testSpecifikacije.getBrojPartije()).isEqualTo(UPDATED_BROJ_PARTIJE);
         assertThat(testSpecifikacije.getAtc()).isEqualTo(DEFAULT_ATC);
-        assertThat(testSpecifikacije.getInn()).isEqualTo(DEFAULT_INN);
+        assertThat(testSpecifikacije.getInn()).isEqualTo(UPDATED_INN);
         assertThat(testSpecifikacije.getFarmaceutskiOblikLijeka()).isEqualTo(DEFAULT_FARMACEUTSKI_OBLIK_LIJEKA);
         assertThat(testSpecifikacije.getJacinaLijeka()).isEqualTo(UPDATED_JACINA_LIJEKA);
         assertThat(testSpecifikacije.getJedinicaMjere()).isEqualTo(UPDATED_JEDINICA_MJERE);
         assertThat(testSpecifikacije.getProcijenjenaVrijednost()).isEqualTo(UPDATED_PROCIJENJENA_VRIJEDNOST);
-        assertThat(testSpecifikacije.getPakovanje()).isEqualTo(UPDATED_PAKOVANJE);
+        assertThat(testSpecifikacije.getPakovanje()).isEqualTo(DEFAULT_PAKOVANJE);
         assertThat(testSpecifikacije.getTrazenaKolicina()).isEqualTo(UPDATED_TRAZENA_KOLICINA);
     }
 
