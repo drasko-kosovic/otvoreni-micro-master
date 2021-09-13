@@ -1,0 +1,117 @@
+{
+  "microserviceName": "otvoreni",
+  "clientRootFolder": "otvoreni",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "broj_ugovora",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "broj_tendera",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "broj_odluke",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "datum_ugovora",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "datum_ponude",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "datum_odluke",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "predmet_ugovora",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "naziv",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telefon",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "naziv_ponudjaca",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "broj_datum_tenderske_dokumntacije",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "broj_datum_odluke",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "broj_datum_ponude",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "iznos_ugovora_bez_pdf",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "sifra_postupka",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "sifra_ponude",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "odgovorno_lice",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "odgovorno_lice_narucioca",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adresa",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adresa_ponudjaca",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "banka_racun",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "racun",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pib",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pdv",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "datum_objave",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "vrsta_postupka",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "service": "no",
+  "readOnly": true,
+  "pagination": "no",
+  "name": "UgovorPdf",
+  "changelogDate": "20210907160356"
+}
